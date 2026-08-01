@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Password Strength Prediction System</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+<h1>🔐 PASSWORD STRENGTH PREDICTION SYSTEM 🔑</h1>
+
+<div class="input-section">
+<div class="input-wrapper">
+<input type="password" id="password" placeholder="Enter your password">
+<span class="eye" onclick="togglePassword()">👁</span>
+</div>
+<button onclick="analyze()">🔍 Analyze</button>
+</div>
+
+<div class="progress">
+<div class="progress-bar" id="progress"></div>
+</div>
+
+<h2 id="strengthText">Strength: -</h2>
+
+<div class="score-container">
+<div class="circle" id="circle">
+<div class="circle-inner">
+<h2 id="scoreCircle">0</h2>
+<span id="statusCircle">Weak</span>
+</div>
+</div>
+</div>
+
+<div class="stars" id="stars">☆☆☆☆☆</div>
+
+<div class="grid">
+<div class="card">🔑 Entropy: <span id="entropy">-</span></div>
+<div class="card">⏳ Estimated Crack Time: <span id="crackTime">-</span></div>
+<div class="card">📚 Dictionary Attack: <span id="dictionary">-</span></div>
+<div class="card">🧠 Pattern Analysis: <span id="pattern">-</span></div>
+<div class="card">🛡 Breach Risk: <span id="breach">-</span></div>
+<div class="card">💣 Brute Force: <span id="bruteforce">-</span></div>
+<div class="card">📂 Common Password: <span id="common">-</span></div>
+<div class="card">⭐ Score: <span id="score">0</span>/100</div>
+</div>
+
+<div class="center-section">
+    <h2>Password Requirements</h2>
+    <ul class="requirements">
+        <li id="upper">Uppercase</li>
+        <li id="lower">Lowercase</li>
+        <li id="number">Number</li>
+        <li id="special">Special Character</li>
+        <li id="length">Length ≥ 10</li>
+    </ul>
+
+    <button class="download" onclick="downloadPDF()">Download Security Report</button>
+
+    <div class="history">
+        <h3>📜 Analysis History</h3>
+        <ul id="historyList"></ul>
+    </div>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
